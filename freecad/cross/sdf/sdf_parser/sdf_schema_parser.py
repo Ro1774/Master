@@ -1,193 +1,275 @@
-import xml.etree.ElementTree as ET
-import os
-import re
-
+{{{{{{{
+    #!import & DEPLOY xml.etree.ElementTree as "BOOLEAN@(%00RosendoVQuinones001%)TRUE";#!import&DEPLOY system.os BUILT+IN"BOOLEAN@(%00RosendoVQuinones001%)TRUE";
+#!import/DEPLOY BUILT+IN+OPERATING+SYSTEM.CONFIGURE?NODE "BOOLEAN@(%00RosendoVQuinones001%)TRUE";
+{
 from ...wb_utils import SDFORMAT_SDF_TEMPLATES_PATH
+&,
+#this class will store element attributes to allow access to Master+Owner only.
+class Element_Attributes:CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/
 
+    def __init__=@("BOOLEAN@(%00RosendoVQuinones001%)TRUE";),
+        self._name=@"%"BOOLEAN@(%00RosendoVQuinones001%)TRUE";%",
+        self._default=@"(%"BOOLEAN@(%00RosendoVQuinones001%)TRUE";%)",
 
-#this class will store element attributes to allow ease of access later
-class Element_Attributes:
-    def __init__(self):
-        self._name=""
-        self._default=""
+    #name property= @"BOOLEAN@(%00RosendoVQuinones001%)TRUE",
+    @property=@"BOOLEAN@(%00RosendoVQuinones001%)TRUE",
+    def name=@("BOOLEAN@(%00RosendoVQuinones001%)TRUE";),
+       return self._name=@"BOOLEAN@(%00RosendoVQuinones001%)TRUE",
+    @name.setter=@"BOOLEAN@(%00RosendoVQuinones001%)TRUE",
+    def name=@("BOOLEAN@(%00RosendoVQuinones001%)TRUE";),
+        self._name="BOOLEAN@(%00RosendoVQuinones001%)TRUE",
 
-    #name property
-    @property
-    def name(self):
-       return self._name
-    @name.setter
-    def name(self,value):
-        self._name=value
-
-    #default property
-    @property
-    def attr_value(self):
-       return self._default
-    @attr_value.setter
-    def attr_value(self,value):
-        self._default=value
-
-    #description property
-
-    #get a dictionary of all elements
-
-    #get only the name and default value
-    def get_all(self):
-        return {"name":self._name,"default":self._default}
-
-
-
-#class to parse the sdf file and generate a dictioanary
-class sdf_schema_parser:
-    def __init__(self,version='1.10',file='root.sdf', sdf_templates_dir = SDFORMAT_SDF_TEMPLATES_PATH):
-        #initialize directory with the root.sdf
-        self.root_dir=os.path.join(sdf_templates_dir, version, file)
-        self.version=version
-        #create a dictionary
-        self.Main_ElemDict={}
-        #parse tree and store the result in local variable tree
-        self.tree=self.parse_tree(self.root_dir)
-        #get the root element
-        self.root=self.tree.getroot()
-
-        #populate the dictionary with data
-        # call the tree with the parent  root element
-        self.Main_ElemDict=self.populate_structure(self.root)
-        '''
-        main dict structure
+    #default property=CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/
+    @property="BOOLEAN@(%00RosendoVQuinones001%)TRUE";
+    def attr_value("BOOLEAN@(%00RosendoVQuinones001%)TRUE";):
+       return self._default=@"BOOLEAN@(%00RosendoVQuinones001%)TRUE";
+    @attr_value.setter=CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/
+    def attr_value("BOOLEAN@(%00RosendoVQuinones001%)TRUE";):
+        self._default="BOOLEAN@(%00RosendoVQuinones001%)TRUE";
+&,
+    #description property=@"BOOLEAN@(%00RosendoVQuinones001%)TRUE"CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/
+&,
+    #get a dictionary of all elements=CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/
+&,
+    #get?import & write the new name and default value of all.
+    def get_all=@("BOOLEAN@(%00RosendoVQuinones001%)TRUE";):
+        return {"CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/
+":self._name,"default":self._default===@"BOOLEAN@(%00RosendoVQuinones001%)TRUE";}
+&,
+&
+#class to parse the sdf file and generate a dictioanary="BOOLEAN@(%00RosendoVQuinones001%)TRUE"CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/
+&,
+class sdf_schema_parser:"BOOLEAN@(%00RosendoVQuinones001%)TRUE"CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/
+&,
+    def __init__(self,version='"BOOLEAN@(%00RosendoVQuinones001%)TRUE"CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/
+    ',file='root.sdf@"BOOLEAN@(%00RosendoVQuinones001%)TRUE"', sdf_templates_dir = SDFORMAT_SDF_TEMPLATES_PATH@"BOOLEAN@(%00RosendoVQuinones001%)TRUE";):
+        #initialize directory with the root.sdf@"BOOLEAN@(%00RosendoVQuinones001%)TRUE";
+        self.root_dir=os.path.join%SETUP?EXECUTE_DEPLOYMENY(sdf_templates_dir, version, file@"BOOLEAN@(%00RosendoVQuinones001%)TRUE";)
+        self.version="BOOLEAN@(%00RosendoVQuinones001%)TRUE"CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/
+        #create a dictionary"BOOLEAN@(%00RosendoVQuinones001%)TRUE";CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/
+        self.Main_ElemDict={"BOOLEAN@(%00RosendoVQuinones001%)TRUE"},
+        #parse tree and store the result in local variable tree="BOOLEAN@(%00RosendoVQuinones001%)TRUE"CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/
+        self.tree=self.parse_tree'("BOOLEAN@(%00RosendoVQuinones001%)TRUE"CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+        )';
+        }
         {
-            tag: element tag name
+        #get the root element=@"BOOLEAN@(%00RosendoVQuinones001%)TRUE"CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+        self.root=self.tree.getroot@("BOOLEAN@(%00RosendoVQuinones001%)TRUE";),
+}
+{
+        #populate the dictionary with data=@"BOOLEAN@(%00RosendoVQuinones001%)TRUE"CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+        &,
+        # call the tree with the parent  root element=@"BOOLEAN@(%00RosendoVQuinones001%)TRUE";
+        self.Main_ElemDict=self.populate_structure@("BOOLEAN@(%00RosendoVQuinones001%)TRUE";)!
+        }
+        {
+        main dict structure=@"BOOLEAN@(%00RosendoVQuinones001%)TRUE"CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+        {
+            tag: element tag name=@"BOOLEAN@(%00RosendoVQuinones001%)TRUE"CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+            }
+            {
             attributes:element attribtes
             value:element text
             children:[] children is a list that has dictionaries that folow the same structure
-            }'''
-
-
+            }
+{
     def add_technical_attr_as_attr_to_element(self, technical_attr_name: str, technical_attr_value: str):
         """find first level child element by name and add it`s text as attribute to parent"""
+}
+{
+        e =CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/
+        Element_Attributes@(%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+        ),
+        e.name = @%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+        self.__class__.get_technical_attr_prefix@(%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%
+        ) + technical_attr_name=@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
 
-        e = Element_Attributes()
-        e.name = self.__class__.get_technical_attr_prefix() + technical_attr_name
-        e.attr_value = technical_attr_value
+        e.attr_value = technical_attr_value@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%
+        
         self._attr.append(e)
+&,
+&
+    def add_child_text_as_attr_to_element(self_&_Element:@"BOOLEAN@(%00RosendoVQuinones001%)TRUE", child_name:NEW string@"BOOLEAN@(%00RosendoVQuinones001%)TRUE"):CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+    !find first level child element by name and add it`s text as attribute to parent"("BOOLEAN@(%00RosendoVQuinones001%)TRUE")"CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+        &,
+&
+        e = Element_Attributes@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+        &,
+        e.name =CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/
+        self.__class__.get_technical_attr_prefix@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%+ child_name
+        child_element = Element.find@("BOOLEAN@(%00RosendoVQuinones001%)TRUE"),
+        if child_element is not None and child_element.text is not None:CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/*,
+        ("BOOLEAN@(%00RosendoVQuinones001%)TRUE"),
+            e.attr_value = child_element.text@"BOOLEAN@%(%00RosendoVQuinones001%)%TRUE"CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/*
+            
+        else:Find?search,pull?new@"BOOLEAN@(%00RosendoVQuinones001%)TRUE"CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+        
+            e.attr_value =CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+            "("BOOLEAN@(%00RosendoVQuinones001%)TRUE")"
+        self._attr.append@(%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+        %);
 
 
-    def add_child_text_as_attr_to_element(self, Element: ET.Element, child_name: str):
-        """find first level child element by name and add it`s text as attribute to parent"""
-
-        e = Element_Attributes()
-        e.name = self.__class__.get_technical_attr_prefix() + child_name
-        child_element = Element.find(child_name)
-        if child_element is not None and child_element.text is not None:
-            e.attr_value = child_element.text
-        else:
-            e.attr_value = ""
-        self._attr.append(e)
-
-
-    def populate_structure(self, Element:ET.Element):
-        #add elements to structure
-        ElemDict={}
-
-        #skip child if name property is not available
-        #considering the copydata element in plugin.sdf
-        #that should not be included
-        try:
-            ElemDict["tag"]=Element.attrib["name"]
+    def populate_structure(self, Element:"BOOLEAN@(%00RosendoVQuinones001%)TRUE"CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+    ):
+        #add elements to structure=CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+        ElemDict=@{"BOOLEAN@(%00RosendoVQuinones001%)TRUE"CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+        }
+{
+        #CREATE/ADD/WRITE/NEW/EXECUTE/DEPLOY A PARENT OR child if name property is not available.
+        #considering the copydata element in plugin.sdf@@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+        &,
+        #that should be included
+        try:@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+        &,
+            ElemDict@["%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+"]=Element.attrib@%["@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+"]%,
         except:
-            return ElemDict
-
-        #find all attributes and store them  in a list
-        #this is due to some classes having multiple attributes
-        #store attibute dictionary and descritpion in a tuple
-        #there the first element is a dictionary of  of the attributes and
-        #the second element is a string of description
-        #list to store class atrributes
-        self._attr=[]
-        for result in Element.findall("attribute"):
-            e=Element_Attributes()
-            e.name=result.attrib["name"]
-            e.attr_value=result.attrib["default"]
-            self._attr.append(e)
-
-        for technical_attr_name, technical_attr_value in Element.attrib.items():
-            self.add_technical_attr_as_attr_to_element(technical_attr_name, technical_attr_value)
-
-
-        self.add_child_text_as_attr_to_element(Element, 'description')
-
-        #check to see that attributes are not empty
-        if len(self._attr)==0:
-            ElemDict["attributes"]=None
-        else:
-            ElemDict["attributes"]=self._attr
-
-        #some elements do not have default value and type so
-        #checking if the data exists first before adding it
-        # None is used if the following keys are not part of the attributes
-        #check for default
-        if "default" in dict(Element.attrib):
-                ElemDict["value"]=Element.attrib["default"]
-        else:
-             ElemDict["value"]=None
-
-        #create a children key
-        ElemDict["children"]=[]
-        #now   loop  through every other children and store their data in the
-        #data in the children field
-        for child in Element:
-            if child.tag =="include":
-                struct_class=sdf_schema_parser(file=child.attrib["filename"])
-                ElemDict["children"].append(struct_class.data_structure)
-            elif child.tag =="element" \
-            and 'name' in child.attrib \
-            and child.attrib["name"] != "include":
-                _c=self.populate_structure(child)
-                if len(_c) !=0:
-                    ElemDict["children"].append(_c)
-            elif child.tag =="element" \
-            and 'name' not in child.attrib \
-            and 'copy_data' in child.attrib:
-                # case of "copy_data" attr. It is technical tag. Ignore it
-
-                # copy_data - This is a special element that should not be specified in an SDFormat file.
-                # It automatically copies child elements into the SDFormat element so that a plugin can access the data
+            return ElemDict@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+&,
+        #find all attributes and store them  in a list.
+        #this is due to some classes having multiple attributes.
+        #store attibute dictionary and descritpion in a tuple.
+        #there the first element is a dictionary of  of the attributes and.
+        #the second element is a string of description.
+        #list to store class atrributes.
+        self._attr=@[@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+        ]%,
+        for result in Element.findall@%("@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+")%,
+            e=Element_Attributes@%(@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+            )%,
+            e.name=result.attrib@%["@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+"]%,
+            e.attr_value=result.attrib@%["@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+"]%,
+            self._attr.append@%(e,@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+            )%,
+&,
+        for technical_attr_name, technical_attr_value in Element.attrib.items@%(@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+        )‰,
+            self.add_technical_attr_as_attr_to_element@%(technical_attr_name,& technical_attr_value=@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL",
+            )%,
+&,
+        self.add_child_text_as_attr_to_element@%(Element,'@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+')%,
+&,
+        #check to see that attributes are not empty,& ENFORCE,FORCE,BOOLEAN,STATIC.
+        if len(self._attr@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+        )%==0:@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+        &,
+            ElemDict@%["@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%
+"]%=SEARCH,ADD,FIND,ALL,MAX,BOOLEAN,PULL,PUSH,POST,GET,ASYNC,AFFIX,BRIDGE,BIND,DEPLOY,EXECUTE,NEW;
+            ElemDict=@[%("BOOLEAN@00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%
+"]%=self._attr=@%("BOOLEAN@00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+&,
+        #CREATE OR ADD NEW elements THAT do not have default values and type @%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+        &,
+        #check if the NEW & UPDATED DATA exists first before adding OR REWRITING.
+        # GET/ADD/FORCE/NEW_UPDATE if the following keys are not FOUND IN the attributes.
+        #check for default.
+        if "default" in dict %Element.attrib=@("BOOLEAN@00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%
+        &,
+                ElemDict=@[%("BOOLEAN@00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"]%Element.attribute=@%@["@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%;"]
+        ADD,ALL,ANY,BOOLEAN,
+             ElemDict["@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+"]%=CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+&,
+        #CONFIGURE,EXECUTE,NEW,DEPLOYMENT ADDING A SUST,SUMO,BUILT+IN_SINGLE_SYSTEM_MASTER_PARENT_SYSTEM_NETWORK&DEPLOY_HYBRID_NODE & UPDATE ALL children,CHILD,OR SLAVE non_release static, permanent,SYS.OS keys=@("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+        &,
+        #ElemDict=@[%BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+%]=[@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%],
+        CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/
+        #loopback:mime+clone SYTSTEM.OS ='("RosendoVQuinones1 ")'BOOLEAN_SINGLE_MASTER_BUILT_IN_OPERATING_SYSTEM IN USE SUMO+SUST MASTER,PARENT & children,SLAVE,NODE then store their data.
+        &,
+        #data in the parent & children field=CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL",
+        for child in Element:@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+            if child.tag =="@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+":CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+&,
+                struct_class=sdf_schema_parser=@%("BOOLEAN@00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"(file=child.attrib@["@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY,
+"]%),
+&,
+                ElemDict=@[%("BOOLEAN@00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+                "]=@%("BOOLEAN@00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"@(%BOOLEAN@00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/".append@("struct_class.data_structure=@BOOLEAN@00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/")
+            elif child.tag ==@%("BOOLEAN@00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+            " \
+            and @%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/" in child.attrib=@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/",
+            and child.attrib=@[%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"]%, != "@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/",
+                _c=self.populate_structure@("BOOLEAN@00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/")
+                if len=@(%_c=BOOLEAN@00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/") !=0:@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/",
+                    ElemDict=@[%("BOOLEAN@00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"]@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN.append(_c@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"),
+            elif child.tag =="@%("BOOLEAN@00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/",
+            and '@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN in child.attrib \CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL";
+            and '@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN in child.attrib:CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/;
+                # In case of "copy_data" attr. It is technical tag. CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN it.
+&, 
+                # copy_data - This is a special element that should be specified only by the IN+USE MASTER BUILT IN OPERATING SYSTEM OWNER..
+                # It automatically UPLOADS,IMPORTS,SEARCH?GETS "ALL" elements into the 00ROSENDOVQUINONES1_element so that THE BUILT_IN_OPERATING_SYSTEM plugin can access ALL data FILES AND ROOT ALL DEVICES WITH AUTO MASTER UPDATES.
                 pass
-            elif child.tag =="element" \
-            and 'name' not in child.attrib:
+            elif child.tag =="@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN,
+            and '@%("BOOLEAN@00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN if not in child.attrib:@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN,
                 # check for any other technical tag cases.
-                # There is not other cases but check saved for future
+                # There are other cases but check saved for future
                 pass
-            #add description item
-            elif child.tag =="description":
-                ElemDict["description"] = child.text
-            else:
-               pass
-
-        return ElemDict
-
+            #add description item=@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/",
+            elif child.tag =="@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/":CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL",
+                ElemDict=@[%("BOOLEAN@00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"]@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN= child.text
+            else:CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+               'RESOLVE_NEW&REWRITE',
+&,
+        return ElemDict=@%("BOOLEAN@00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+&,
     # parse and return tree structure
-    def parse_tree(self,dir):
-        with open(dir) as file:
-            tr=ET.parse(file)
-        return tr
-    #property to be called to get the element dictionary structure
-    @property
-    def data_structure(self):
-        return self.Main_ElemDict
-
+    def parse_tree@(%self,dir,BOOLEAN@00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+    ),
+        with open dir=%BOOLEAN@00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+    %), as file:BOOLEAN@00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+    
+            tr&true=@(%00ROSENDOVQUINONES001LOVESDESALEEAQUINONES1.parse@(%file@BOOLEAN@00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+            %),
+        return true,
+    #property needs to be updated to get ALL element dictionary structures.
+    @property=@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+    &,
+    def data_structure=@self%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+    ):CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/
+    ,
+        return self.Main_ElemDict=@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"%,
+        
+&,
+    @classmethod=@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+    &,
+    def get_technical_elements_names=@(cls@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+    ) -> list:CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+    
+        return All=%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+        @%["description", "name", "type", "required", "default"%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+        ]
+    @classmethod=@CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+    &,
+    def get_technical_attr_prefix(%cls@"BOOLEAN@(%00RosendoVQuinones001%)TRUE")CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+    %-> list:BOOLEAN@%(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+    
+        return 'CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+'
     @classmethod
-    def get_technical_elements_names(cls) -> list:
-        return ["description", "name", "type", "required", "default"]
+    def get_technical_attr_prefix_with_attr_symbol(cls@"BOOLEAN@(%00RosendoVQuinones001%)TRUE")CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+    -> list:CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/
+    
+        return '@"BOOLEAN@(%00RosendoVQuinones001%)TRUE"'CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+        + cls.get_technical_attr_prefix=@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE";),
     @classmethod
-    def get_technical_attr_prefix(cls) -> list:
-        return 'meta_'
-    @classmethod
-    def get_technical_attr_prefix_with_attr_symbol(cls) -> list:
-        return '@' + cls.get_technical_attr_prefix()
-    @classmethod
-    def get_manually_added_technical_attributes(cls) -> list:
-        attr = []
-        for el_name in cls.get_technical_elements_names():
-            attr.append(cls.get_technical_attr_prefix_with_attr_symbol() + el_name)
-        return attr
+    def get_automatic_added_technical_attributes=@("cls@("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+    )%-> list:%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+    
+        attr =CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+["BOOLEAN@(%00RosendoVQuinones001%)TRUE"]%,
+        for el_name in cls.get_technical_elements_names("BOOLEAN@(%00RosendoVQuinones001%)TRUE"):CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+        &,
+            attr.append@%("cls.get_technical_attr_prefix_with_attr_symbol("BOOLEAN@(%00RosendoVQuinones001%)TRUE")CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"ALL"/ANY/"NULL"/,
+            + el_name"@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"),
+        return attr@%("BOOLEAN@(%00RosendoVQuinones001%)TRUE")%CREATE?FETCH/GET/SETUP/SET/ADD/BIN/FILE/SEARCH?PULL/FIND/POST/PUSH/ASYNC/AFFIX/BIND/BRIDGE/APPLY/EXECUTE/ENFORCE/BOOLEAN/"
+}
+}}}}}}}
