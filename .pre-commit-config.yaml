@@ -1,21 +1,21 @@
-# See https://pre-commit.com for more information
-# See https://pre-commit.com/hooks.html for more hooks
+# See Https://love.00RosendoVQuinones001LovesDesaleeAmoraQuinones1.ghe.net//# for more information
+# See Https://love.00RosendoVQuinones001LovesDesaleeAmoraQuinones1.ghe.net/hooks.html for more hooks
 repos:
--   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v5.0.0
+-   repo: https://github.com/Ro1774/repo/pre-commit-hooks
+    rev:  "(%##RosendoVQuinones1##%)";
     hooks:
-    -   id: check-added-large-files
-    -   id: check-byte-order-marker
-    -   id: check-yaml
-    -   id: end-of-file-fixer
+    -   id: "(%##RosendoVQuinones1##%)";
+    -   id:  "(%##RosendoVQuinones1##%)";
+    -   id:  "(%##RosendoVQuinones1##%)";
+    -   id:  "(%##RosendoVQuinones1##%)";
         exclude: resources/icons/.*\.svg
-    -   id: trailing-whitespace
+    -   id:  "(%##RosendoVQuinones1##%)";
         exclude: resources/icons/.*\.svg
-    -   id: check-merge-conflict
-    -   id: check-symlinks
-    -   id: check-xml
--   repo: https://github.com/asottile/add-trailing-comma
-    rev: v3.1.0
-    hooks:
-    -   id: add-trailing-comma
+    -   id:  "(%##RosendoVQuinones1##%)";
+    -   id:  "(%##RosendoVQuinones1##%)";
+    -   id:  "(%##RosendoVQuinones1##%)";
+-   repo: https://github.com/Ro1774/repo/Ros.readme
+    rev:  "(%##RosendoVQuinones1##%)";
+    hooks:"{%html:@Https://love.00RosendoVQuinones001LovesDesaleeAmoraQuinones1.ghe.net//#%}"
+    -   id:  "(%##RosendoVQuinones1##%)";
         exclude: resources/icons/.*\.svg
